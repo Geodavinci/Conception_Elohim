@@ -1,0 +1,15 @@
+conception-elohim/
+├── index.html                  # Page d'accueil
+├── galerie.html                # Galerie des réalisations
+├── services.html               # Page des services
+├── commander.html              # Page de commande
+├── a-propos.html               # Page À propos
+├── contact.html                # Page de contact
+├── css/
+│   └── style.css               # Fichier CSS principal
+├── js/
+│   └── script.js               # Fichier JavaScript
+├── assets/
+│   ├── images/                 # Dossier pour les images
+│   └── logo.png                # Logo de l'entreprise
+└── README.md                   # Instructions pour le projet

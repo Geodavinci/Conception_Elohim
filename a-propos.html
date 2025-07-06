@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Conception Elohim</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-montserrat">
+    <!-- Header -->
+    <header class="bg-black text-gold-500 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="assets/images/logo.png" alt="Conception Elohim" class="h-12 animate-pulse">
+                <span class="ml-2 text-xl font-bold font-playfair">Conception Elohim</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="galerie.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Galerie
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="services.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="commander.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Commander
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="a-propos.html" class="text-gold-500 hover:text-gold-300 transition duration-300 relative group">
+                        À propos
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gold-500"></span>
+                    </a></li>
+                    <li><a href="contact.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black py-4" id="mobile-menu">
+            <ul class="space-y-4 px-4">
+                <li><a href="index.html" class="block text-white hover:text-gold-500 py-2">Accueil</a></li>
+                <li><a href="galerie.html" class="block text-white hover:text-gold-500 py-2">Galerie</a></li>
+                <li><a href="services.html" class="block text-white hover:text-gold-500 py-2">Services</a></li>
+                <li><a href="commander.html" class="block text-white hover:text-gold-500 py-2">Commander</a></li>
+                <li><a href="a-propos.html" class="block text-gold-500 py-2">À propos</a></li>
+                <li><a href="contact.html" class="block text-white hover:text-gold-500 py-2">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-black to-gray-800 text-white py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 font-playfair animate-fadeIn">Notre Histoire</h1>
+                <p class="text-xl md:text-2xl mb-8 animate-fadeIn animation-delay-100">Découvrez l'âme derrière Conception Elohim</p>
+                <div class="animate-fadeIn animation-delay-200">
+                    <a href="#notre-histoire" class="inline-block border border-white text-white hover:bg-white hover:text-black font-bold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105 mr-4">
+                        Notre parcours
+                    </a>
+                    <a href="#notre-equipe" class="inline-block bg-gold-500 hover:bg-gold-600 text-black font-bold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                        Rencontrez l'équipe
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Animated decorative elements -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+                <div class="absolute top-1/4 left-1/4 w-16 h-16 rounded-full bg-gold-500 opacity-10 animate-float1"></div>
+                <div class="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-gold-500 opacity-10 animate-float2"></div>
+                <div class="absolute bottom-1/4 right-1/3 w-20 h-20 rounded-full bg-gold-500 opacity-10 animate-float3"></div>
+            </div>
+        </section>
+
+        <!-- Notre Histoire -->
+        <section id="notre-histoire" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <span class="text-gold-500 font-medium tracking-widest">NOTRE HISTOIRE</span>
+                        <h2 class="text-3xl font-bold mt-2 font-playfair">Une passion transformée en excellence</h2>
+                        <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-16 transform hover:-translate-y-1 transition duration-300">
+                        <div class="md:flex">
+                            <div class="md:w-2/5 relative">
+                                <img src="assets/images/DG.jpeg" alt="Fondateur de Conception Elohim" class="w-full h-full object-cover min-h-96">
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                                    <h3 class="text-xl font-bold text-white font-playfair">GAMON K. Germain</h3>
+                                    <p class="text-white">Fondateur & Directeur Artistique</p>
+                                </div>
+                            </div>
+                            <div class="md:w-3/5 p-8">
+                                <div class="flex items-center mb-6">
+                                    <div class="bg-gold-500 text-black rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold font-playfair">Les débuts</h3>
+                                </div>
+                                <p class="text-gray-600 mb-6">Passionné par l'art et la photographie depuis son plus jeune âge, M. Germain a transformé sa passion en métier après des années à capturer les moments précieux de ses proches. Ce qui n'était au départ qu'un hobby est rapidement devenu une vocation.</p>
+                                
+                                <div class="flex items-center mb-6">
+                                    <div class="bg-gold-500 text-black rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold font-playfair">La création</h3>
+                                </div>
+                                <p class="text-gray-600 mb-6">Avec une formation en arts visuels et plusieurs années d'expérience dans la photographie professionnelle, M. Germain a fondé Conception Elohim en 2020 avec une vision claire : offrir à chacun la possibilité de transformer ses souvenirs en œuvres d'art intemporelles.</p>
+                                
+                                <div class="flex items-center mb-6">
+                                    <div class="bg-gold-500 text-black rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold font-playfair">Aujourd'hui</h3>
+                                </div>
+                                <p class="text-gray-600">"Chaque photo raconte une histoire, et notre mission est de donner à ces histoires un cadre qui les met en valeur pour les années à venir. Chez Conception Elohim, nous ne créons pas simplement des produits, nous concevons des héritages visuels."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notre Philosophie -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center mb-16">
+                    <span class="text-gold-500 font-medium tracking-widest">NOTRE PHILOSOPHIE</span>
+                    <h2 class="text-3xl font-bold mt-2 font-playfair">Les piliers de notre excellence</h2>
+                    <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                    <p class="text-gray-600 mt-6">Notre approche allie savoir-faire artisanal et technologies modernes pour vous offrir des produits uniques qui résistent à l'épreuve du temps.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <div class="text-gold-500 text-5xl mb-6">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-playfair">Qualité Inégalée</h3>
+                        <p class="text-gray-600">Nous utilisons exclusivement des matériaux premium sélectionnés pour leur durabilité et leur esthétique. Chaque pièce est inspectée méticuleusement avant livraison.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <div class="text-gold-500 text-5xl mb-6">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-playfair">Approche Sur-Mesure</h3>
+                        <p class="text-gray-600">Votre projet est unique. Nous consacrons le temps nécessaire à comprendre vos attentes pour créer une pièce qui vous ressemble et s'intègre parfaitement à votre espace.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <div class="text-gold-500 text-5xl mb-6">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 font-playfair">Satisfaction Garantie</h3>
+                        <p class="text-gray-600">Notre engagement : vous êtes satisfait ou nous révisons votre création sans frais supplémentaires jusqu'à ce qu'elle réponde parfaitement à vos attentes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notre Engagement -->
+        <section id="notre-equipe" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center mb-16">
+                    <span class="text-gold-500 font-medium tracking-widest">NOTRE ENGAGEMENT</span>
+                    <h2 class="text-3xl font-bold mt-2 font-playfair">Plus qu'un métier, une passion</h2>
+                    <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-gold-500 text-black rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold font-playfair">Développement Durable</h3>
+                            </div>
+                            <p class="text-gray-600 mb-8">Nous nous engageons à réduire notre impact environnemental en utilisant des matériaux écologiques, des encres végétales et des procédés responsables. Nos emballages sont recyclables et nos déchets sont triés méticuleusement.</p>
+                            
+                            <div class="flex items-center mb-6">
+                                <div class="bg-gold-500 text-black rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold font-playfair">Support Local</h3>
+                            </div>
+                            <p class="text-gray-600 mb-8">Nous travaillons avec des artisans et fournisseurs locaux pour soutenir l'économie de notre région. Plus de 80% de nos matériaux sont sourcés dans un rayon de 100km autour de notre atelier.</p>
+                            
+                            <div class="flex items-center mb-6">
+                                <div class="bg-gold-500 text-black rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold font-playfair">Formation Continue</h3>
+                            </div>
+                            <p class="text-gray-600">Notre équipe se forme régulièrement aux dernières techniques et tendances pour vous offrir le meilleur service. Chaque année, nous investissons l'équivalent de 3 semaines par employé en formation professionnelle.</p>
+                        </div>
+                        
+                        <div class="md:w-1/2 bg-gray-100 flex items-center justify-center p-8">
+                            <div class="relative w-full h-96 rounded-lg overflow-hidden">
+                                <img src="assets/images/entreprise.jpeg" alt="Notre atelier" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                                    <div class="text-center p-6 bg-white bg-opacity-90 rounded-lg max-w-xs">
+                                        <h3 class="text-xl font-bold mb-2 font-playfair">Notre Atelier</h3>
+                                        <p class="text-gray-600 text-sm">Lieu de création où chaque pièce prend vie avec passion et précision</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notre Equipe -->
+        <section class="py-16 bg-black text-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center mb-16">
+                    <span class="text-gold-500 font-medium tracking-widest">NOTRE ÉQUIPE</span>
+                    <h2 class="text-3xl font-bold mt-2 font-playfair">Rencontrez nos artisans</h2>
+                    <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                    <p class="text-gray-300 mt-6">Une équipe passionnée dédiée à transformer vos idées en réalités</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="relative h-64">
+                            <img src="assets/images/equipe1.jpg" alt="Photographe" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <h3 class="text-xl font-bold font-playfair">Amah</h3>
+                                <p class="text-gold-400">Photographe & Retoucheur</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300">"Capturer l'émotion parfaite est mon obsession. Chaque cliché doit raconter une histoire."</p>
+                            <div class="flex mt-4 space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-gold-500"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-gold-500"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="relative h-64">
+                            <img src="assets/images/equipe2.jpg" alt="Designer" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <h3 class="text-xl font-bold font-playfair">Afi</h3>
+                                <p class="text-gold-400">Designer & Conceptrice</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300">"Transformer une simple image en œuvre d'art nécessite à la fois technique et sensibilité artistique."</p>
+                            <div class="flex mt-4 space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-gold-500"><i class="fab fa-dribbble"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-gold-500"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="relative h-64">
+                            <img src="assets/images/equipe3.jpg" alt="Artisan" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                            <div class="absolute bottom-0 left-0 p-6">
+                                <h3 class="text-xl font-bold font-playfair">Koffi</h3>
+                                <p class="text-gold-400">Maître Artisan Cadreur</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300">"Un cadre doit mettre en valeur l'œuvre sans la dominer. C'est un équilibre subtil."</p>
+                            <div class="flex mt-4 space-x-3">
+                                <a href="#" class="text-gray-400 hover:text-gold-500"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-gold-500"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-gold-500 text-black">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6 font-playfair">Prêt à créer quelque chose d'unique ?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Notre équipe est à votre disposition pour discuter de votre projet et vous guider dans vos choix.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="commander.html" class="bg-black text-white hover:bg-gray-800 font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                        Commander maintenant
+                    </a>
+                    <a href="contact.html" class="bg-white text-black hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                        Nous contacter
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/logo.png" alt="Conception Elohim" class="h-10">
+                        <span class="ml-2 text-xl font-bold font-playfair">Conception Elohim</span>
+                    </div>
+                    <p class="mb-4 text-gray-300">Transformez vos souvenirs en œuvres d'art avec nos créations personnalisées.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Accueil</a></li>
+                        <li><a href="galerie.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Galerie</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Services</a></li>
+                        <li><a href="commander.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Commander</a></li>
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-gold-500 transition duration-300">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Nos Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#tableaux" class="text-gray-300 hover:text-gold-500 transition duration-300">Tableaux décoratifs</a></li>
+                        <li><a href="services.html#photographie" class="text-gray-300 hover:text-gold-500 transition duration-300">Photographie professionnelle</a></li>
+                        <li><a href="services.html#impressions" class="text-gray-300 hover:text-gold-500 transition duration-300">Impressions personnalisées</a></li>
+                        <li><a href="services.html#miroirs" class="text-gray-300 hover:text-gold-500 transition duration-300">Miroirs décoratifs</a></li>
+                        <li><a href="services.html#cadres" class="text-gray-300 hover:text-gold-500 transition duration-300">Cadres sur mesure</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-gold-500"></i>
+                            <a href="tel:+22870686656" class="text-gray-300 hover:text-gold-500 transition duration-300">+228 70-68-66-56</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-gold-500"></i>
+                            <a href="mailto:contact@conceptionelohim.com" class="text-gray-300 hover:text-gold-500 transition duration-300">germaingamon00@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-gold-500"></i>
+                            <span class="text-gray-300">Lomé, Togo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-3 text-gold-500"></i>
+                            <span class="text-gray-300">Lun-Ven: 9h-18h<br>Sam: 10h-15h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                 <p>&copy; 2025 Conception Elohim. Tous droits réservés. <h3 class="text-l font-bold mb-4 text-gold-500 font-playfair">By Géonel_Dev</h3></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gold-500 text-black w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible', 'opacity-100');
+                backToTopButton.classList.remove('invisible', 'opacity-0');
+            } else {
+                backToTopButton.classList.remove('visible', 'opacity-100');
+                backToTopButton.classList.add('invisible', 'opacity-0');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

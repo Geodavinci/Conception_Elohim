@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commander - Conception Elohim</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .border-red-500 {
+    border-color: #ef4444 !important;
+}
+        .upload-option {
+            transition: all 0.3s ease;
+        }
+        .upload-option:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .upload-option.active {
+            border-color: #D1A054;
+            background-color: rgba(209, 160, 84, 0.05);
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 font-montserrat">
+    <!-- Header -->
+    <header class="bg-black text-gold-500 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="assets/images/logo.png" alt="Conception Elohim" class="h-12 animate-pulse">
+                <span class="ml-2 text-xl font-bold font-playfair">Conception Elohim</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="galerie.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Galerie
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="services.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="commander.html" class="text-gold-500 hover:text-gold-300 transition duration-300 relative group">
+                        Commander
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gold-500"></span>
+                    </a></li>
+                    <li><a href="a-propos.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        À propos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="contact.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black py-4" id="mobile-menu">
+            <ul class="space-y-4 px-4">
+                <li><a href="index.html" class="block text-white hover:text-gold-500 py-2">Accueil</a></li>
+                <li><a href="galerie.html" class="block text-white hover:text-gold-500 py-2">Galerie</a></li>
+                <li><a href="services.html" class="block text-white hover:text-gold-500 py-2">Services</a></li>
+                <li><a href="commander.html" class="block text-gold-500 py-2">Commander</a></li>
+                <li><a href="a-propos.html" class="block text-white hover:text-gold-500 py-2">À propos</a></li>
+                <li><a href="contact.html" class="block text-white hover:text-gold-500 py-2">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-32">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <!-- Progress Steps -->
+                <div class="mb-12">
+                    <div class="flex items-center justify-between relative">
+                        <div class="flex-1 border-t-2 border-gold-500 absolute top-1/2 left-0 right-0 -z-10"></div>
+                        <div class="flex flex-col items-center relative">
+                            <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center mb-2">1</div>
+                            <span class="text-sm font-medium text-gold-500">Configuration</span>
+                        </div>
+                        <div class="flex flex-col items-center relative">
+                            <div class="w-10 h-10 rounded-full bg-gold-500 text-black font-bold flex items-center justify-center mb-2">2</div>
+                            <span class="text-sm font-medium text-gold-500">Détails</span>
+                        </div>
+                        <div class="flex flex-col items-center relative">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 text-gray-600 font-bold flex items-center justify-center mb-2">3</div>
+                            <span class="text-sm font-medium text-gray-500">Confirmation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Left Panel - Form -->
+                    <div class="lg:w-2/3">
+                        <div class="bg-white rounded-xl shadow-xl overflow-hidden p-8">
+                            <h2 class="text-2xl font-bold mb-6 font-playfair">Configuration de votre commande</h2>
+                            
+                            <form id="commande-form" class="space-y-6">
+                                <!-- Service Type -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Type de création *</label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <input type="radio" id="tableau" name="service" value="Tableau personnalisé" class="hidden peer" required>
+                                            <label for="tableau" class="flex flex-col items-center justify-between p-4 border border-gray-300 rounded-lg cursor-pointer peer-checked:border-gold-500 peer-checked:bg-gold-50 hover:bg-gray-50 transition duration-200">
+                                                <i class="fas fa-image text-2xl text-gold-500 mb-2"></i>
+                                                <span class="font-medium">Tableau</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="miroir" name="service" value="Photographie shoot" class="hidden peer">
+                                            <label for="miroir" class="flex flex-col items-center justify-between p-4 border border-gray-300 rounded-lg cursor-pointer peer-checked:border-gold-500 peer-checked:bg-gold-50 hover:bg-gray-50 transition duration-200">
+                                                <i class="fas fa-camera text-2xl text-gold-500 mb-2"></i>
+                                                <span class="font-medium">Photographie</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Upload Options -->
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Option d'image *</label>
+                                    <div class="space-y-4">
+                                        <div class="upload-option border border-gray-300 rounded-lg p-4 cursor-pointer active" id="upload-option1">
+                                            <input type="radio" name="upload-option" id="option1" class="hidden" checked value="Je vous enverrai l'image depuis ma galerie via WhatsApp">
+                                            <div class="flex items-start">
+                                                <div class="bg-gold-500 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                                    <i class="fas fa-check text-xs"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-lg mb-1">Je vous enverrai l'image depuis ma galerie via WhatsApp</h3>
+                                                    <p class="text-gray-600 text-sm">Vous pourrez m'envoyer directement l'image lors de la conversation WhatsApp.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="upload-option border border-gray-300 rounded-lg p-4 cursor-pointer" id="upload-option2">
+                                            <input type="radio" name="upload-option" id="option2" class="hidden" value="Je viens prendre la photo chez vous">
+                                            <div class="flex items-start">
+                                                <div class="border border-gray-400 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                                                    <i class="fas fa-check text-xs hidden"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-lg mb-1">Je viens prendre la photo chez vous</h3>
+                                                    <p class="text-gray-600 text-sm">Nous organiserons une séance photo dans notre studio professionnel.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Photo Session Info (hidden by default) -->
+                                <div id="photo-session-info" class="hidden bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-info-circle text-blue-500 mt-1 mr-3"></i>
+                                        <div>
+                                            <h3 class="font-bold text-blue-800 mb-1">Séance photo en studio</h3>
+                                            <p class="text-blue-700 text-sm">Après envoi de votre commande, nous vous contacterons pour planifier une séance photo dans notre studio équipé.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Dimensions -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="largeur" class="block text-sm font-medium text-gray-700 mb-2">Largeur (cm) *</label>
+                                        <select id="largeur" name="largeur" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
+                                            <option value="">Sélectionnez</option>
+                                            <option value="30">30 cm</option>
+                                            <option value="40">40 cm</option>
+                                            <option value="50">50 cm</option>
+                                            <option value="60">60 cm</option>
+                                            <option value="70">70 cm</option>
+                                            <option value="80">80 cm</option>
+                                            <option value="90">90 cm</option>
+                                            <option value="100">100 cm</option>
+                                            <option value="sur-mesure">Sur mesure</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="hauteur" class="block text-sm font-medium text-gray-700 mb-2">Hauteur (cm) *</label>
+                                        <select id="hauteur" name="hauteur" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
+                                            <option value="">Sélectionnez</option>
+                                            <option value="40">40 cm</option>
+                                            <option value="50">50 cm</option>
+                                            <option value="60">60 cm</option>
+                                            <option value="70">70 cm</option>
+                                            <option value="80">80 cm</option>
+                                            <option value="90">90 cm</option>
+                                            <option value="100">100 cm</option>
+                                            <option value="sur-mesure">Sur mesure</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!-- Material -->
+                                <div>
+                                    <label for="materiau" class="block text-sm font-medium text-gray-700 mb-2">Commande*</label>
+                                    <select id="materiau" name="materiau" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
+                                        <option value="">Sélectionnez le type</option>
+                                        <option value="Toile">Tableau Simple</option>
+                                        <option value="Aluminium">Cadre Photo</option>
+                                        <option value="Acrylique">Miroir Simple</option>
+                                        <option value="Papier photo">Miroir Luxe</option>
+                                        <option value="Bois">Photo Trasparent</option>
+                                        <option value="Autre">Autre (précisez dans les notes)</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Personal Info -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="form-field">
+                                      <label for="prenom" class="block text-sm font-medium text-gray-700 mb-2">Prénom *</label>
+                                      <input type="text" id="prenom" name="prenom" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
+                                </div>
+                                    <div>
+                                        <label for="nom" class="block text-sm font-medium text-gray-700 mb-2">Nom *</label>
+                                        <input type="text" id="nom" name="nom" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                    <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="telephone" class="block text-sm font-medium text-gray-700 mb-2">Téléphone WhatsApp *</label>
+                                    <input type="tel" id="telephone" name="telephone" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
+                                </div>
+                                
+                                <!-- Project Details -->
+                                <div>
+                                    <label for="description" class="block text-sm font-medium text-gray-700 mb-2">Description de votre projet *</label>
+                                    <textarea id="description" name="description" rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" placeholder="Décrivez en détail ce que vous souhaitez (style, couleurs, ambiance, etc.)" required></textarea>
+                                </div>
+                                
+                                <!-- Terms -->
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="conditions" name="conditions" type="checkbox" class="focus:ring-gold-500 h-4 w-4 text-gold-600 border-gray-300 rounded" required>
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="conditions" class="font-medium text-gray-700">J'accepte les <a href="#" class="text-gold-600 hover:text-gold-500">conditions générales</a> *</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <div class="pt-4">
+                                    <button type="submit" class="w-full bg-black text-white py-3 px-6 rounded-lg font-bold hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gold-500 transition duration-300 flex items-center justify-center">
+                                        <i class="fab fa-whatsapp text-xl mr-2"></i> Envoyer la commande via WhatsApp
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Panel - Price Image -->
+                    <div class="lg:w-1/3">
+                        <div class="bg-white rounded-xl shadow-xl overflow-hidden sticky top-32">
+                            <div class="bg-gold-500 text-black p-4">
+                                <h3 class="font-bold text-xl font-playfair">Nos Tarifs</h3>
+                            </div>
+                            <div class="p-4">
+                                <!-- Remplacez cette image par votre propre image de tarifs -->
+                                <img src="assets/images/tarifs.jpeg" alt="Tableau des tarifs Conception Elohim" class="w-full h-auto rounded-lg">
+                                <div class="mt-4 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <p class="text-sm text-gray-600">
+                                        <i class="fas fa-info-circle text-gold-500 mr-2"></i> 
+                                        Les prix sont indicatifs. Un devis personnalisé vous sera envoyé après réception de votre commande.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/logo.png" alt="Conception Elohim" class="h-10">
+                        <span class="ml-2 text-xl font-bold font-playfair">Conception Elohim</span>
+                    </div>
+                    <p class="mb-4 text-gray-300">Transformez vos souvenirs en œuvres d'art avec nos créations personnalisées.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Accueil</a></li>
+                        <li><a href="galerie.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Galerie</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Services</a></li>
+                        <li><a href="commander.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Commander</a></li>
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-gold-500 transition duration-300">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Nos Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#tableaux" class="text-gray-300 hover:text-gold-500 transition duration-300">Tableaux décoratifs</a></li>
+                        <li><a href="services.html#photographie" class="text-gray-300 hover:text-gold-500 transition duration-300">Photographie professionnelle</a></li>
+                        <li><a href="services.html#impressions" class="text-gray-300 hover:text-gold-500 transition duration-300">Impressions personnalisées</a></li>
+                        <li><a href="services.html#miroirs" class="text-gray-300 hover:text-gold-500 transition duration-300">Miroirs décoratifs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-gold-500"></i>
+                            <a href="tel:+22870686656" class="text-gray-300 hover:text-gold-500 transition duration-300">+228 70-68-66-56</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-gold-500"></i>
+                            <a href="mailto:contact@conceptionelohim.com" class="text-gray-300 hover:text-gold-500 transition duration-300">germaingamon00@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-gold-500"></i>
+                            <span class="text-gray-300">Lomé, Togo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-3 text-gold-500"></i>
+                            <span class="text-gray-300">Lun-Ven: 9h-18h<br>Sam: 10h-15h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Conception Elohim. Tous droits réservés. <h3 class="text-l font-bold mb-4 text-gold-500 font-playfair">By Géonel_Dev</h3></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gold-500 text-black w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+   // WhatsApp Integration
+document.getElementById('commande-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validate required fields first
+    const requiredFields = [
+        'input[name="service"]:checked',
+        'input[name="upload-option"]:checked',
+        '#largeur',
+        '#hauteur',
+        '#materiau',
+        '#prenom',
+        '#nom',
+        '#email',
+        '#telephone',
+        '#description',
+        '#conditions'
+    ];
+    
+    let isValid = true;
+    requiredFields.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (!element || (element.type === 'checkbox' && !element.checked)) {
+            isValid = false;
+            // Highlight missing fields
+            if (element) {
+                element.closest('.form-field')?.classList.add('border-red-500');
+            }
+        }
+    });
+    
+    if (!isValid) {
+        alert('Veuillez remplir tous les champs obligatoires marqués d\'un *');
+        return;
+    }
+    
+    // Get form values
+    const service = document.querySelector('input[name="service"]:checked').value;
+    const uploadOption = document.querySelector('input[name="upload-option"]:checked').value;
+    const largeur = document.getElementById('largeur').value;
+    const hauteur = document.getElementById('hauteur').value;
+    const materiau = document.getElementById('materiau').value;
+    const prenom = document.getElementById('prenom').value.trim();
+    const nom = document.getElementById('nom').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telephone = document.getElementById('telephone').value.trim();
+    const description = document.getElementById('description').value.trim();
+    
+    // Format phone number - remove all non-digit characters
+    const formattedPhone = telephone.replace(/\D/g, '');
+    
+    // Check if phone number starts with country code, if not add it
+    const whatsappPhone = formattedPhone.startsWith('228') ? formattedPhone : '228' + formattedPhone;
+    
+    // Create WhatsApp message with proper encoding
+    const message = `Nouvelle commande - Conception Elohim%0A%0A` +
+                   `*Type de création:* ${encodeURIComponent(service)}%0A` +
+                   `*Option image:* ${encodeURIComponent(uploadOption)}%0A` +
+                   `*Dimensions:* ${encodeURIComponent(largeur)} x ${encodeURIComponent(hauteur)} cm%0A` +
+                   `*Matériau:* ${encodeURIComponent(materiau)}%0A` +
+                   `*Nom complet:* ${encodeURIComponent(prenom + ' ' + nom)}%0A` +
+                   `*Email:* ${encodeURIComponent(email)}%0A` +
+                   `*Téléphone:* ${encodeURIComponent(telephone)}%0A%0A` +
+                   `*Description du projet:*%0A${encodeURIComponent(description)}%0A%0A` +
+                   `(Cette commande a été envoyée via le site web)`;
+    
+    // Open WhatsApp with prefilled message
+    const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Optional: Reset form after submission
+    // this.reset();
+});
+
+        // Upload options toggle
+        const uploadOption1 = document.getElementById('upload-option1');
+        const uploadOption2 = document.getElementById('upload-option2');
+        const photoSessionInfo = document.getElementById('photo-session-info');
+        
+        uploadOption1.addEventListener('click', function() {
+            this.classList.add('active');
+            uploadOption2.classList.remove('active');
+            document.getElementById('option1').checked = true;
+            photoSessionInfo.classList.add('hidden');
+            
+            // Update checkmarks
+            this.querySelector('div > div').classList.add('bg-gold-500', 'text-white');
+            this.querySelector('div > div').classList.remove('border', 'border-gray-400');
+            this.querySelector('div > div i').classList.remove('hidden');
+            
+            uploadOption2.querySelector('div > div').classList.remove('bg-gold-500', 'text-white');
+            uploadOption2.querySelector('div > div').classList.add('border', 'border-gray-400');
+            uploadOption2.querySelector('div > div i').classList.add('hidden');
+        });
+        
+        uploadOption2.addEventListener('click', function() {
+            this.classList.add('active');
+            uploadOption1.classList.remove('active');
+            document.getElementById('option2').checked = true;
+            photoSessionInfo.classList.remove('hidden');
+            
+            // Update checkmarks
+            this.querySelector('div > div').classList.add('bg-gold-500', 'text-white');
+            this.querySelector('div > div').classList.remove('border', 'border-gray-400');
+            this.querySelector('div > div i').classList.remove('hidden');
+            
+            uploadOption1.querySelector('div > div').classList.remove('bg-gold-500', 'text-white');
+            uploadOption1.querySelector('div > div').classList.add('border', 'border-gray-400');
+            uploadOption1.querySelector('div > div i').classList.add('hidden');
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible', 'opacity-100');
+                backToTopButton.classList.remove('invisible', 'opacity-0');
+            } else {
+                backToTopButton.classList.remove('visible', 'opacity-100');
+                backToTopButton.classList.add('invisible', 'opacity-0');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>

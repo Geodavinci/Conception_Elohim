@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Conception Elohim</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-montserrat">
+    <!-- Header -->
+    <header class="bg-black text-gold-500 shadow-lg fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="assets/images/logo.png" alt="Conception Elohim" class="h-12 animate-pulse">
+                <span class="ml-2 text-xl font-bold font-playfair">Conception Elohim</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Accueil
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="galerie.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Galerie
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="services.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="commander.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        Commander
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="a-propos.html" class="text-white hover:text-gold-300 transition duration-300 relative group">
+                        À propos
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a></li>
+                    <li><a href="contact.html" class="text-gold-500 hover:text-gold-300 transition duration-300 relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gold-500"></span>
+                    </a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-black py-4" id="mobile-menu">
+            <ul class="space-y-4 px-4">
+                <li><a href="index.html" class="block text-white hover:text-gold-500 py-2">Accueil</a></li>
+                <li><a href="galerie.html" class="block text-white hover:text-gold-500 py-2">Galerie</a></li>
+                <li><a href="services.html" class="block text-white hover:text-gold-500 py-2">Services</a></li>
+                <li><a href="commander.html" class="block text-white hover:text-gold-500 py-2">Commander</a></li>
+                <li><a href="a-propos.html" class="block text-white hover:text-gold-500 py-2">À propos</a></li>
+                <li><a href="contact.html" class="block text-gold-500 py-2">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-32">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-gold-500 font-medium tracking-widest">NOUS CONTACTER</span>
+                <h1 class="text-4xl font-bold mt-2 font-playfair">Parlons de votre projet</h1>
+                <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets artistiques.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-1 transition duration-300">
+                    <h2 class="text-2xl font-bold mb-6 text-gold-500 font-playfair">Envoyez-nous un message</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition duration-300" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition duration-300" required>
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+                            <select id="subject" name="subject" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition duration-300">
+                                <option value="question">Question générale</option>
+                                <option value="commande">Demande de commande</option>
+                                <option value="devis">Demande de devis</option>
+                                <option value="rendezvous">Prise de rendez-vous</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition duration-300" required></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-gold-500 hover:bg-gold-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gold-500 transition duration-300 transform hover:scale-105">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-1 transition duration-300">
+                        <h2 class="text-2xl font-bold mb-6 text-gold-500 font-playfair">Nos coordonnées</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-gold-500 rounded-full p-3 text-black mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Adresse</h3>
+                                    <p class="text-gray-600">Avenou derrière l'église protestante proche des rails</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-gold-500 rounded-full p-3 text-black mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Téléphone</h3>
+                                    <p class="text-gray-600"><a href="tel:+22870686656" class="hover:text-gold-500 transition duration-300">+228 70-68-66-56</a></p>
+                                    <p class="text-gray-600 mt-1"><a href="tel:+22898080563" class="hover:text-gold-500 transition duration-300">+228 98-08-05-63</a></p> 
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-gold-500 rounded-full p-3 text-black mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Email</h3>
+                                    <p class="text-gray-600"><a href="mailto:germaingamon00@gmail.com" class="hover:text-gold-500 transition duration-300">germain.elohim@conception.com</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-gold-500 rounded-full p-3 text-black mr-4 flex-shrink-0">
+                                    <i class="fas fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Heures d'ouverture</h3>
+                                    <p class="text-gray-600">Lundi - Vendredi: 9h - 18h</p>
+                                    <p class="text-gray-600">Samedi: 10h - 15h</p>
+                                    <p class="text-gray-600 mt-2 text-sm">Sur rendez-vous en dehors de ces horaires</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition duration-300 hover:shadow-xl">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d1.185893!3d6.177568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTAnMzkuMiJOIDHCsDExJzA5LjIiRQ!5e0!3m2!1sfr!2stg!4v1620000000000!5m2!1sfr!2stg&z=16" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        class="transition duration-300 hover:opacity-90">
+    </iframe>
+</div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center transform hover:-translate-y-1 transition duration-300">
+                        <h2 class="text-2xl font-bold mb-6 text-gold-500 font-playfair">Suivez-nous</h2>
+                        <p class="text-gray-600 mb-6">Découvrez nos dernières créations et promotions sur nos réseaux sociaux.</p>
+                        <div class="flex justify-center space-x-6">
+                            <a href="#" class="bg-black text-white hover:bg-gold-500 hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-black text-white hover:bg-gold-500 hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-black text-white hover:bg-gold-500 hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-pinterest-p text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-black text-white hover:bg-gold-500 hover:text-black rounded-full w-12 h-12 flex items-center justify-center transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-gold-500 font-medium tracking-widest">QUESTIONS FRÉQUENTES</span>
+                <h2 class="text-3xl font-bold mt-2 font-playfair">Questions fréquentes sur le contact</h2>
+                <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Quel est le délai moyen de réponse à mes messages ?</h3>
+                            <i class="fas fa-chevron-down text-gold-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Nous nous engageons à répondre à toutes les demandes dans un délai maximum de 24 heures ouvrables. Pour les demandes urgentes, nous vous recommandons de nous contacter par téléphone.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Puis-je me rendre directement à votre atelier sans rendez-vous ?</h3>
+                            <i class="fas fa-chevron-down text-gold-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Notre atelier est ouvert au public aux heures d'ouverture indiquées. Cependant, pour un service optimal et garantir la disponibilité de notre équipe, nous recommandons fortement de prendre rendez-vous au préalable.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-4">
+                    <button class="faq-question w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Quels sont les moyens de paiement acceptés ?</h3>
+                            <i class="fas fa-chevron-down text-gold-500 transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Nous acceptons les paiements en espèces, par carte bancaire, virement et mobile money. Pour les commandes en ligne, le paiement s'effectue par virement bancaire ou mobile money.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 font-playfair">Vous préférez discuter en direct ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Notre équipe est disponible pour échanger avec vous par téléphone ou WhatsApp pour répondre à toutes vos questions.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+22870686656" class="bg-gold-500 hover:bg-gold-600 text-black font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-phone-alt mr-2"></i> Appelez-nous
+                </a>
+                <a href="https://wa.me/22870686656" class="border border-white text-white hover:bg-white hover:text-black font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/logo.png" alt="Conception Elohim" class="h-10">
+                        <span class="ml-2 text-xl font-bold font-playfair">Conception Elohim</span>
+                    </div>
+                    <p class="mb-4 text-gray-300">Transformez vos souvenirs en œuvres d'art avec nos créations personnalisées.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Accueil</a></li>
+                        <li><a href="galerie.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Galerie</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Services</a></li>
+                        <li><a href="commander.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Commander</a></li>
+                        <li><a href="a-propos.html" class="text-gray-300 hover:text-gold-500 transition duration-300">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-gold-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Nos Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#tableaux" class="text-gray-300 hover:text-gold-500 transition duration-300">Tableaux décoratifs</a></li>
+                        <li><a href="services.html#photographie" class="text-gray-300 hover:text-gold-500 transition duration-300">Photographie professionnelle</a></li>
+                        <li><a href="services.html#impressions" class="text-gray-300 hover:text-gold-500 transition duration-300">Impressions personnalisées</a></li>
+                        <li><a href="services.html#miroirs" class="text-gray-300 hover:text-gold-500 transition duration-300">Miroirs décoratifs</a></li>
+                        <li><a href="services.html#cadres" class="text-gray-300 hover:text-gold-500 transition duration-300">Cadres sur mesure</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-gold-500 font-playfair">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-gold-500"></i>
+                            <a href="tel:+22870686656" class="text-gray-300 hover:text-gold-500 transition duration-300">+228 70-68-66-56</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-gold-500"></i>
+                            <a href="mailto:contact@conceptionelohim.com" class="text-gray-300 hover:text-gold-500 transition duration-300">germaingamon00@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-gold-500"></i>
+                            <span class="text-gray-300">Lomé, Togo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-3 text-gold-500"></i>
+                            <span class="text-gray-300">Lun-Ven: 9h-18h<br>Sam: 10h-15h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                 <p>&copy; 2025 Conception Elohim. Tous droits réservés. <h3 class="text-l font-bold mb-4 text-gold-500 font-playfair">By Géonel_Dev</h3></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-gold-500 text-black w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-40 hover:bg-gold-600 transform hover:scale-110">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to a server
+            // For this example, we'll just show a success message
+            alert('Merci pour votre message! Nous vous contacterons dans les plus brefs délais.');
+            this.reset();
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
