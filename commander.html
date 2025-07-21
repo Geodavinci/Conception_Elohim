@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commander - Conception Elohim</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,6 +184,7 @@
                                         <select id="largeur" name="largeur" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
                                             <option value="">Sélectionnez</option>
                                             <option value="30">30 cm</option>
+                                            <option value="35">35 cm</option>
                                             <option value="40">40 cm</option>
                                             <option value="50">50 cm</option>
                                             <option value="60">60 cm</option>
@@ -198,6 +200,7 @@
                                         <select id="hauteur" name="hauteur" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
                                             <option value="">Sélectionnez</option>
                                             <option value="40">40 cm</option>
+                                            <option value="45">45 cm</option>
                                             <option value="50">50 cm</option>
                                             <option value="60">60 cm</option>
                                             <option value="70">70 cm</option>
@@ -214,11 +217,11 @@
                                     <label for="materiau" class="block text-sm font-medium text-gray-700 mb-2">Commande*</label>
                                     <select id="materiau" name="materiau" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-gold-500 focus:border-gold-500" required>
                                         <option value="">Sélectionnez le type</option>
-                                        <option value="Toile">Tableau Simple</option>
-                                        <option value="Aluminium">Cadre Photo</option>
-                                        <option value="Acrylique">Miroir Simple</option>
-                                        <option value="Papier photo">Miroir Luxe</option>
-                                        <option value="Bois">Photo Trasparent</option>
+                                        <option value="Tableau_Simple">Tableau Simple</option>
+                                        <option value="Cadre_photo">Cadre Photo</option>
+                                        <option value="Miroir_Simple">Miroir Simple</option>
+                                        <option value="Miroir_Luxe">Miroir Luxe</option>
+                                        <option value="Photo_transparent">Photo Trasparent</option>
                                         <option value="Autre">Autre (précisez dans les notes)</option>
                                     </select>
                                 </div>
@@ -370,7 +373,10 @@
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Conception Elohim. Tous droits réservés. <h3 class="text-l font-bold mb-4 text-gold-500 font-playfair">By Géonel_Dev</h3></p>
+                <p>&copy; 2025 Conception Elohim. Tous droits réservés.</p>
+    <a href="https://geodavinci.github.io/Geonel_dev/" target="_blank" class="text-gold-500 font-bold font-playfair hover:underline">
+        By Géonel_Dev
+    </a>
             </div>
         </div>
     </footer>
@@ -382,7 +388,7 @@
 
     <script src="js/script.js"></script>
     <script>
-   // WhatsApp Integration
+// WhatsApp Integration
 document.getElementById('commande-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -430,11 +436,8 @@ document.getElementById('commande-form').addEventListener('submit', function(e) 
     const telephone = document.getElementById('telephone').value.trim();
     const description = document.getElementById('description').value.trim();
     
-    // Format phone number - remove all non-digit characters
-    const formattedPhone = telephone.replace(/\D/g, '');
-    
-    // Check if phone number starts with country code, if not add it
-    const whatsappPhone = formattedPhone.startsWith('228') ? formattedPhone : '228' + formattedPhone;
+    // ✅ Fix: always send to fixed WhatsApp number (Togo: 22870686656)
+    const whatsappPhone = '22870686656';
     
     // Create WhatsApp message with proper encoding
     const message = `Nouvelle commande - Conception Elohim%0A%0A` +
@@ -455,6 +458,8 @@ document.getElementById('commande-form').addEventListener('submit', function(e) 
     // Optional: Reset form after submission
     // this.reset();
 });
+
+
 
         // Upload options toggle
         const uploadOption1 = document.getElementById('upload-option1');
@@ -521,6 +526,18 @@ document.getElementById('commande-form').addEventListener('submit', function(e) 
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
+        document.querySelectorAll('input[name="service"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        // Retirer le style actif de tous les labels
+        document.querySelectorAll('label[for]').forEach(label => {
+            label.classList.remove('border-gold-500', 'ring-2', 'ring-gold-300');
+        });
+
+        // Ajouter le style doré au label sélectionné
+        const selectedLabel = document.querySelector(`label[for="${this.id}"]`);
+        selectedLabel.classList.add('border-gold-500', 'ring-2', 'ring-gold-300');
+    });
+});
     </script>
 </body>
 </html>
